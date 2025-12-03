@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title:
@@ -8,11 +9,11 @@ export const metadata: Metadata = {
   description:
     "Mooe's Landscaping & Pest Control provides lawn mowing, landscaping, pest control, wildlife removal, and moisture solutions for homes and businesses in Statesville, Mooresville, Troutman, Harmony, Olin and Iredell County, NC.",
   alternates: {
-    canonical: "https://mooeslandscapingandpest.com/",
+    canonical: "https://www.mooeslandscapingandpest.com/",
   },
   openGraph: {
     type: "website",
-    url: "https://mooeslandscapingandpest.com/",
+    url: "https://www.mooeslandscapingandpest.com/",
     title:
       "Mooe's Landscaping & Pest Control | Landscaping, Lawn Care & Pest Control in Iredell County NC",
     description:
@@ -24,13 +25,13 @@ export const metadata: Metadata = {
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "@id": "https://mooeslandscapingandpest.com/#local-business",
+  "@id": "https://www.mooeslandscapingandpest.com/#local-business",
   name: "Mooe's Landscaping and Pest Control",
-  url: "https://mooeslandscapingandpest.com/",
+  url: "https://www.mooeslandscapingandpest.com/",
   image: [
-    "https://mooeslandscapingandpest.com/hero-landscape.jpg",
-    "https://mooeslandscapingandpest.com/mower-striping.jpg",
-    "https://mooeslandscapingandpest.com/hero-wildlife.jpg",
+    "https://www.mooeslandscapingandpest.com/hero-landscape.jpg",
+    "https://www.mooeslandscapingandpest.com/mower-striping.jpg",
+    "https://www.mooeslandscapingandpest.com/hero-wildlife.jpg",
   ],
   telephone: "+1-704-500-6475",
   priceRange: "$$",
@@ -59,21 +60,29 @@ const localBusinessJsonLd = {
     ratingValue: "4.6",
     reviewCount: "7",
   },
-  // You can add more profiles later if you want:
-  // sameAs: [
-  //   "https://www.yelp.com/your-listing",
-  //   "https://www.bbb.org/your-listing"
-  // ]
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
+        {/* Google Analytics (GA4) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-004M1FRK8T"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-004M1FRK8T');
+          `}
+        </Script>
+
         {/* JSON-LD LocalBusiness schema for Google */}
         <script
           type="application/ld+json"
-          // IMPORTANT: don't change this line — it safely embeds the JSON-LD
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(localBusinessJsonLd),
           }}
@@ -119,8 +128,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 Mooe&apos;s Landscaping &amp; Pest Control
               </div>
               <div>
-                Call or Text:{" "}
-                <a href="tel:17045006475">704-500-6475</a>
+                Call or Text: <a href="tel:17045006475">704-500-6475</a>
               </div>
 
               <div className="footer-contact" style={{ marginTop: "0.35rem" }}>
