@@ -28,12 +28,6 @@ export default function ContactPage() {
               </a>
             </p>
             <p>
-              <strong>Sales (Landscaping &amp; Lawn Care):</strong>{" "}
-              <a href="mailto:betty@mooeslandscapingandpest.com">
-                betty@mooeslandscapingandpest.com
-              </a>
-            </p>
-            <p>
               <strong>Pest &amp; Wildlife:</strong>{" "}
               <a href="mailto:jmooesr@mooeslandscapingandpest.com">
                 jmooesr@mooeslandscapingandpest.com

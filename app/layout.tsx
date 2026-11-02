@@ -139,12 +139,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   </a>
                 </div>
                 <div>
-                  Sales (Landscaping &amp; Lawn Care):{" "}
-                  <a href="mailto:betty@mooeslandscapingandpest.com">
-                    betty@mooeslandscapingandpest.com
-                  </a>
-                </div>
-                <div>
                   Pest &amp; Wildlife:{" "}
                   <a href="mailto:jmooesr@mooeslandscapingandpest.com">
                     jmooesr@mooeslandscapingandpest.com
