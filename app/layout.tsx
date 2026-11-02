@@ -154,6 +154,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             </div>
           </div>
 
+          <nav aria-label="Legal" className="container" style={{display:"flex",gap:"1.5rem",flexWrap:"wrap",marginTop:"1.25rem",textDecoration:"underline"}}><a href="/privacy-policy">Privacy Policy</a><a href="/terms-of-service">Terms of Service</a></nav>
           <div className="footer-bottom">
             © {new Date().getFullYear()} Mooe&apos;s Landscaping &amp; Pest
             Control. All rights reserved.

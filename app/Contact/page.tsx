@@ -78,6 +78,7 @@ export default function ContactPage() {
                 <textarea id="message" name="Message" rows={4} />
               </div>
 
+              <label style={{display:"flex",alignItems:"flex-start",gap:"0.6rem",fontSize:"0.9rem",lineHeight:1.6}}><input type="checkbox" name="SMS consent" value="Yes" style={{marginTop:"0.35rem"}}/><span>I agree to receive service-related text messages from Mooe’s Landscaping &amp; Pest Control, including scheduling, quotes, and billing updates. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for help. Consent is not a condition of purchase. See our <a href="/privacy-policy" style={{textDecoration:"underline"}}>Privacy Policy</a> and <a href="/terms-of-service" style={{textDecoration:"underline"}}>Terms of Service</a>.</span></label>
               <button type="submit" className="btn btn-primary">
                 Send Request
               </button>
