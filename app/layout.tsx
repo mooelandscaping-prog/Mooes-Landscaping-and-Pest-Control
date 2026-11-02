@@ -2,23 +2,14 @@ import "./globals.css";
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
 import Script from "next/script";
+import { pageMetadata } from "../lib/seo";
 
 export const metadata: Metadata = {
-  title:
-    "Mooe's Landscaping & Pest Control | Landscaping, Lawn Care & Pest Control in Iredell County NC",
-  description:
-    "Mooe's Landscaping & Pest Control provides lawn mowing, landscaping, pest control, wildlife removal, and moisture solutions for homes and businesses in Statesville, Mooresville, Troutman, Harmony, Olin and Iredell County, NC.",
-  alternates: {
-    canonical: "https://www.mooeslandscapingandpest.com/",
-  },
-  openGraph: {
-    type: "website",
-    url: "https://www.mooeslandscapingandpest.com/",
-    title:
-      "Mooe's Landscaping & Pest Control | Landscaping, Lawn Care & Pest Control in Iredell County NC",
-    description:
-      "Local, family-run landscaping, lawn care, pest control, wildlife removal, and moisture solutions serving Statesville, Mooresville, Troutman, Harmony, Olin and surrounding Iredell County communities.",
-  },
+ ...pageMetadata("Landscaping & Pest Control in Statesville, NC | Mooe’s", "Local lawn care, landscaping, pest control and wildlife removal in Statesville, Mooresville and Iredell County, NC. Call 704-500-6475 for a quote.", "/"),
+ metadataBase: new URL("https://www.mooeslandscapingandpest.com"),
+ applicationName: "Mooe’s Landscaping & Pest Control",
+ robots: { index: true, follow: true },
+ icons: {icon:[{url:"/icon.png",sizes:"1024x1024",type:"image/png"}],apple:[{url:"/apple-icon.png",sizes:"1024x1024",type:"image/png"}]}
 };
 
 // --------- LocalBusiness JSON-LD (SEO schema) ----------
@@ -34,6 +25,9 @@ const localBusinessJsonLd = {
     "https://www.mooeslandscapingandpest.com/hero-wildlife.jpg",
   ],
   telephone: "+1-704-500-6475",
+  legalName: "Mooe’s Landscaping LLC",
+  logo: "https://www.mooeslandscapingandpest.com/company-logo.png",
+  email: "mooelandscaping@gmail.com",
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",
@@ -55,11 +49,6 @@ const localBusinessJsonLd = {
     "https://www.google.com/maps/place/?q=place_id:ChIJAQDkzThFUYgRBI3i8xS9geU",
   description:
     "Local, family-operated landscaping, lawn care, pest control, wildlife removal, and moisture solutions for homes and businesses in Iredell County, North Carolina.",
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.6",
-    reviewCount: "7",
-  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -89,6 +78,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       <body className="site-body">
+        <a className="skip-link" href="#main-content">Skip to content</a>
         <header className="site-header">
           <div className="container header-inner">
             <div>
@@ -112,14 +102,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <a href="/service-area" className="nav-link">
                 Service Area
               </a>
-              <a href="/Contact" className="nav-link nav-cta">
+              <a href="/contact" className="nav-link nav-cta">
                 Get a Quote
               </a>
             </nav>
           </div>
         </header>
 
-        <main className="site-main">{children}</main>
+        <main id="main-content" className="site-main">{children}</main>
 
         <footer className="site-footer">
           <div className="container footer-inner">
@@ -134,8 +124,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <div className="footer-contact" style={{ marginTop: "0.35rem" }}>
                 <div>
                   General Inquiries:{" "}
-                  <a href="mailto:mooeslandscaping@gmail.com">
-                    mooeslandscaping@gmail.com
+                  <a href="mailto:mooelandscaping@gmail.com">
+                    mooelandscaping@gmail.com
                   </a>
                 </div>
                 <div>

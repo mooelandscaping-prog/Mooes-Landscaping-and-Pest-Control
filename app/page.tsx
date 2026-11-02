@@ -1,37 +1,6 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 
-const testimonials = [
-  {
-    name: "Nancy W.",
-    rating: 5,
-    text: "They came out and did an amazing job maintaining my yard. Reliable, friendly, and fair pricing.",
-    date: "1/20/2024",
-  },
-  {
-    name: "Nancy B.",
-    rating: 5,
-    text: "Josh and his crew from Mooe’s Landscaping and Pest Control keep our property looking great all year.",
-    date: "12/16/2023",
-  },
-  {
-    name: "Casey E.",
-    rating: 4,
-    text: "Appreciated the quality of the work and how quickly they fit us into the schedule.",
-    date: "3/12/2025",
-  },
-];
-
 export default function HomePage() {
-  const [index, setIndex] = useState(0);
-
-  const next = () => setIndex((prev) => (prev + 1) % testimonials.length);
-  const prev = () => setIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-
-  const current = testimonials[index];
-
   return (
     <>
       {/* Hero Section */}
@@ -65,6 +34,7 @@ export default function HomePage() {
                   alt="Finished landscape bed and stone path installed by Mooe's Landscaping in Statesville NC"
                   fill
                   sizes="(min-width: 1024px) 260px, 80vw"
+                  priority
                   className="hero-photo-img"
                 />
               </div>
@@ -115,7 +85,7 @@ export default function HomePage() {
               <h3>Pest Control</h3>
               <p>
                 General pest control for ants, roaches, spiders, rodents, and more.
-                Safe, targeted treatments designed for North Carolina homes and businesses.
+                Targeted treatments designed for North Carolina homes and businesses.
               </p>
             </a>
             <a href="/wildlife-removal" className="card">
@@ -136,50 +106,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials (Google-style slider) */}
-      <section className="section section-alt">
-        <div className="container">
-          <div className="testimonials-header">
-            <div>
-              <h2 className="section-title">What Our Customers Are Saying</h2>
-              <p className="section-intro">
-                Real Google reviews from homeowners and businesses we serve across Iredell County.
-              </p>
-            </div>
-            <div className="testimonials-rating">
-              <div style={{ fontWeight: 700, fontSize: "1.2rem" }}>4.6 ★</div>
-              <div style={{ fontSize: "0.9rem" }}>on Google · 7+ reviews</div>
-            </div>
-          </div>
-
-          <div className="testimonial-slider">
-            <div className="testimonial-card">
-              <p>{current.text}</p>
-              <div className="testimonial-name">
-                {current.name} · {current.date} · {current.rating}★
-              </div>
-              <div className="testimonial-nav">
-                <button className="btn btn-secondary" onClick={prev}>
-                  ◀
-                </button>
-                <button className="btn btn-secondary" onClick={next}>
-                  ▶
-                </button>
-              </div>
-              <div style={{ marginTop: "0.5rem", display: "flex", gap: "4px" }}>
-                {testimonials.map((_, i) => (
-                  <span
-                    key={i}
-                    className={
-                      "testimonial-dot" + (i === index ? " active" : "")
-                    }
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className="section section-alt"><div className="container"><h2 className="section-title">Getting Started Is Simple</h2><div className="grid"><div className="card"><h3>1. Tell Us About Your Property</h3><p>Call, text or request a quote with your address and the work you need.</p></div><div className="card"><h3>2. Review Your Quote</h3><p>We confirm the scope, access and pricing so you know what is included.</p></div><div className="card"><h3>3. Schedule Your Service</h3><p>Choose one-time work or discuss recurring maintenance for your property.</p></div></div></div></section>
 
       {/* Why Choose Us */}
       <section className="section">

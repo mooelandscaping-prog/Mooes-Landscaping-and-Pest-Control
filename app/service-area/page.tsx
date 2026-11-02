@@ -1,8 +1,5 @@
-export const metadata = {
-  title: "Service Areas | Mooe's Landscaping & Pest Control",
-  description:
-    "Mooe's Landscaping & Pest Control serves Statesville, Mooresville, Troutman, Harmony, Olin and surrounding Iredell County communities.",
-};
+import { pageMetadata } from "../../lib/seo";
+export const metadata = pageMetadata("Iredell County Service Areas | Mooe’s Landscaping & Pest Control", "Landscaping, lawn care, pest control and wildlife removal in Statesville, Mooresville, Troutman, Harmony, Olin and nearby Iredell County communities.", "/service-area");
 
 const areas = [
   "Statesville, NC",
@@ -19,7 +16,7 @@ export default function ServiceAreaPage() {
   return (
     <div className="section">
       <div className="container">
-        <h1 className="section-title">Where We Work</h1>
+        <h1 className="section-title">Serving Statesville &amp; Iredell County, NC</h1>
         <p className="section-intro">
           Our team is based in Iredell County and focuses on serving nearby communities
           with landscaping, lawn care, pest control, wildlife removal, and moisture

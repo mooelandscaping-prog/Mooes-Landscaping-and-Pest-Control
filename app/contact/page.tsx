@@ -1,8 +1,5 @@
-export const metadata = {
-  title: "Contact Us | Mooe's Landscaping & Pest Control",
-  description:
-    "Request a free quote for landscaping, lawn care, pest control, wildlife removal, or crawlspace moisture solutions in Iredell County, NC.",
-};
+import { pageMetadata } from "../../lib/seo";
+export const metadata = pageMetadata("Contact Mooe’s | Statesville Landscaping & Pest Control", "Request a quote for lawn care, landscaping, pest control or wildlife removal in Statesville and Iredell County. Call or text 704-500-6475.", "/contact");
 
 export default function ContactPage() {
   return (

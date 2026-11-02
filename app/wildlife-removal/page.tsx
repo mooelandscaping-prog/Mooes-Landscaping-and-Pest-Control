@@ -1,20 +1,20 @@
+import { ServiceSchema } from "../components/ServiceSchema";
+import { pageMetadata } from "../../lib/seo";
 import Image from "next/image";
 
-export const metadata = {
-  title: "Wildlife Removal & Exclusion | Mooe's Landscaping & Pest Control",
-  description:
-    "Humane wildlife removal and exclusion for raccoons, squirrels, snakes, bats and more in Statesville, Mooresville, Troutman and Iredell County.",
-};
+export const metadata = pageMetadata("Wildlife Removal in Statesville, NC | Mooe’s", "Wildlife removal and exclusion for raccoons, squirrels, snakes and other nuisance animals in Statesville and Iredell County. Request an inspection.", "/wildlife-removal");
 
 export default function WildlifeRemovalPage() {
   return (
     <div className="section">
       <div className="container">
-        <h1 className="section-title">Wildlife Removal &amp; Exclusion</h1>
+        <ServiceSchema name="Wildlife removal and exclusion" path="/wildlife-removal" />
+        <nav aria-label="Breadcrumb" style={{fontSize:"0.9rem",marginBottom:"1rem"}}><a href="/">Home</a> / Wildlife removal and exclusion</nav>
+        <h1 className="section-title">Wildlife Removal &amp; Exclusion in Statesville, NC</h1>
         <p className="section-intro">
           When wildlife gets a little too close for comfort—inside your crawlspace,
           attic, walls, or around your home—we provide safe, humane removal and
-          exclusion so animals are relocated and your property is protected.
+          exclusion to address the animal problem and help protect your property.
         </p>
         {/* Snake / wildlife hero image */}
         <div className="wildlife-hero">
@@ -23,6 +23,7 @@ export default function WildlifeRemovalPage() {
             alt="Wildlife removal technician safely handling a snake in Iredell County"
             width={600}
             height={900}
+            sizes="(max-width: 640px) 100vw, 600px"
             className="wildlife-hero-img"
           />
         </div>
@@ -98,6 +99,7 @@ export default function WildlifeRemovalPage() {
             </div>
           </div>
         </section>
+<section className="service-details"><h2>Wildlife Removal Questions</h2><details><summary>Can you help keep animals from coming back?</summary><p>We inspect likely entry points and recommend exclusion work such as sealing gaps and screening vents. The appropriate repair depends on the animal and the building.</p></details><details><summary>What should I tell you when I call?</summary><p>Share your address, where the animal was seen or heard, when the activity happens and any photos you can take from a safe distance. Avoid approaching or handling wildlife.</p></details><details><summary>Can you help with a snake in a garage or crawlspace?</summary><p>Contact us with the location and a description of what you are seeing. We will discuss access and scheduling for removal. Keep people and pets away from the animal while waiting for assistance.</p></details><p>We serve Statesville and nearby <a href="/service-area">Iredell County communities</a>. For insects or rodent treatment, visit our <a href="/pest-control">pest control page</a>.</p></section>
       </div>
     </div>
   );

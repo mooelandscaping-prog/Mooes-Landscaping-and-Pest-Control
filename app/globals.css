@@ -148,8 +148,7 @@ a {
 /* Hero */
 
 .hero {
-  background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(3, 22, 51, 0.97)),
-    url("/hero-collage.jpg") center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(3, 22, 51, 0.97));
   color: #e5e7eb;
   padding: 3.25rem 0 2.75rem;
 }
@@ -570,3 +569,11 @@ a {
     columns: 1;
   }
 }
+/* Keyboard access and readable service details */
+.skip-link {position:fixed;top:-100px;left:1rem;background:white;color:#031633;padding:0.75rem;z-index:1000;}
+.skip-link:focus {top:0.5rem;}
+a:focus-visible, button:focus-visible {outline:3px solid #22c55e;outline-offset:4px;}
+.service-details {margin-top:2.5rem;max-width:52rem;line-height:1.75;}
+.service-details a {text-decoration:underline;}
+.service-details details {padding:1rem 0;border-bottom:1px solid #d1d5db;}
+.service-details summary {cursor:pointer;font-weight:600;}

@@ -1,16 +1,16 @@
+import { ServiceSchema } from "../components/ServiceSchema";
+import { pageMetadata } from "../../lib/seo";
 import Image from "next/image";
 
-export const metadata = {
-  title: "Landscaping & Lawn Care in Iredell County, NC | Mooe's",
-  description:
-    "Weekly and bi-weekly mowing, mulch, plantings, cleanups and full landscape installs in Statesville, Mooresville, Troutman, Harmony, Olin and nearby.",
-};
+export const metadata = pageMetadata("Lawn Care & Landscaping in Statesville, NC | Mooe’s", "Mowing, mulch, pine straw, aeration, overseeding and seasonal cleanups for homes and businesses in Statesville and Iredell County. Request a quote.", "/landscaping-lawn-care");
 
 export default function LandscapingLawnCarePage() {
   return (
     <div className="section">
       <div className="container">
-        <h1 className="section-title">Landscaping &amp; Lawn Care</h1>
+        <ServiceSchema name="Landscaping and lawn care" path="/landscaping-lawn-care" />
+        <nav aria-label="Breadcrumb" style={{fontSize:"0.9rem",marginBottom:"1rem"}}><a href="/">Home</a> / Landscaping and lawn care</nav>
+        <h1 className="section-title">Lawn Care &amp; Landscaping in Statesville, NC</h1>
         <p className="section-intro">
           From weekly mowing to full landscape makeovers, we help homeowners and
           businesses in Iredell County keep their properties sharp, clean, and healthy
@@ -24,6 +24,7 @@ export default function LandscapingLawnCarePage() {
             alt="Bobcat mower creating clean stripes on a lawn maintained by Mooe's Landscaping"
             width={1400}
             height={900}
+            sizes="(max-width: 768px) 100vw, 1100px"
             className="landscape-hero-img"
           />
         </div>
@@ -63,6 +64,7 @@ export default function LandscapingLawnCarePage() {
                 src="/stripes-lawn.jpg"
                 alt="Striped lawn maintained by Mooe's Landscaping"
                 fill
+                sizes="(max-width: 768px) 100vw, 440px"
                 className="mower-photo-img"
               />
             </div>
@@ -71,6 +73,7 @@ export default function LandscapingLawnCarePage() {
                 src="/mower-striping.jpg"
                 alt="Bobcat mower used by Mooe's Landscaping"
                 fill
+                sizes="(max-width: 768px) 100vw, 440px"
                 className="mower-photo-img"
               />
             </div>
@@ -139,6 +142,7 @@ export default function LandscapingLawnCarePage() {
             </div>
           </div>
         </section>
+<section className="service-details"><h2>Seasonal Lawn Care for Iredell County</h2><p>In addition to mowing and landscape maintenance, we offer core aeration, overseeding, fertilization, leaf removal and gutter cleaning. Tell us about thin turf, heavy leaf buildup or overgrown beds so we can quote the work your property needs.</p><h2>Landscaping &amp; Lawn Care Questions</h2><details><summary>What is included in a mowing visit?</summary><p>Our mowing service includes cutting the lawn, trimming, edging where needed and blowing clippings from hard surfaces. Your quote confirms the service area and visit frequency.</p></details><details><summary>Can you quote aeration and overseeding?</summary><p>Yes. We quote based on lawn size, access and the work requested. Share your property address and the areas you want seeded when you <a href="/contact">request a lawn care quote</a>.</p></details><details><summary>Do you maintain commercial properties?</summary><p>We provide grounds maintenance for residential and commercial properties. Contact us to review mowing areas, landscape beds, seasonal work and the service schedule.</p></details><p>Based in Statesville and serving <a href="/service-area">Iredell County communities</a>. We also offer <a href="/pest-control">pest control</a> and <a href="/wildlife-removal">wildlife removal</a>.</p></section>
       </div>
     </div>
   );
